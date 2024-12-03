@@ -12,11 +12,10 @@ class Employe:
             lst=self.__employees[category]
             lst[employe.id]=employe
         else:                 
-            self.__employees[category]={}        #creating new employee category ##githubcodespace changes
+            self.__employees[category]={}        #creating new employee category ##githubcodespace changes # ok i know
             lst=self.__employees[category]
             lst[employe.id]=employe
-
-    
+#ok i heard
     def remove_employee(self,category,employeId):
         if category in self.__employees:
             lst=self.__employees[category]
