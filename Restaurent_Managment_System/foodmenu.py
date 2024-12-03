@@ -1,6 +1,5 @@
-from fooditem import *
 
-class Menu:
+class Food_menu:
     def __init__(self):
         self.__menu = {
             "pizza": {},
@@ -20,6 +19,7 @@ class Menu:
             self.__menu[category] = {}  # Creating a new category for food
             foodmap = self.__menu[category]
             foodmap[item.name] = item
+        print("fooditem added succesfully!")
 
     def remove_food(self, category, itemname):
         if category in self.__menu:
@@ -41,10 +41,3 @@ class Menu:
             print()
 
 
-m1 = Menu()
-
-fooditem = Pizza("cheese_pizza", 250, 5)  # Example food item
-m1.add_food("pizza", fooditem)
-m1.show_food()
-m1.remove_food("pizza","cheese_pizza")
-m1.show_food()

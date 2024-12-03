@@ -1,5 +1,5 @@
 
-class Employe:
+class Employee_menu:
     def __init__(self):
         self.__employees={
             "staf":{},
@@ -12,17 +12,17 @@ class Employe:
             lst=self.__employees[category]
             lst[employe.id]=employe
         else:                 
-            self.__employees[category]={}        #creating new employee category ##githubcodespace changes # ok i know
+            self.__employees[category]={}        #creating new employee category 
             lst=self.__employees[category]
             lst[employe.id]=employe
-#ok i heard
+
     def remove_employee(self,category,employeId):
         if category in self.__employees:
             lst=self.__employees[category]
             if employeId in lst:
                 del lst[employeId]
             else:
-                print(employ)
+                print(f"{employeId} not foudn ")
         else:
             print(f"{category} no found!")
 

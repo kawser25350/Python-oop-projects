@@ -1,12 +1,13 @@
-from foodmenus import Food_menu
-from employeemenu import Employeemenu
+
+from foodmenu import Food_menu
+from employeemenu import Employee_menu
 
 class Restaurent:
     def __init__(self,name,Address):
         self.name=name
         self.address=Address
-        self.employemenue=Employeemenu()                           
-        self.foodmenu=Food_menu()
+        self.emenu=Employee_menu()                           
+        self.fmenu=Food_menu()
         self.orders={
             "customerid":[]
         }
