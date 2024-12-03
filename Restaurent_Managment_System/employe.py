@@ -12,7 +12,7 @@ class Employe:
             lst=self.__employees[category]
             lst[employe.id]=employe
         else:                 
-            self.__employees[category]={}        #creating new employee category
+            self.__employees[category]={}        #creating new employee category ##githubcodespace changes
             lst=self.__employees[category]
             lst[employe.id]=employe
 
