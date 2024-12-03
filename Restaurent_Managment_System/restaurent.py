@@ -1,15 +1,12 @@
-from foodmenu import Foodmenu
+from foodmenus import Food_menu
 from employeemenu import Employeemenu
-from fooditem import *
 
-
-from users import Customer
 class Restaurent:
     def __init__(self,name,Address):
         self.name=name
         self.address=Address
         self.employemenue=Employeemenu()                           
-        self.foodmenu=Foodmenu()
+        self.foodmenu=Food_menu()
         self.orders={
             "customerid":[]
         }
@@ -47,13 +44,7 @@ class Restaurent:
 
                 
 
-r1=Restaurent("mamar restaurent","mohammadpur")
 
-f1=Pizza("chessy",1200,10)
-r1.foodmenu.add_food("pizza",f1)
-r1.foodmenu.show_food()
-
-# c1=Customer(1,"kawser","23059432","mohmmadpur")
               
     
                                                                          
