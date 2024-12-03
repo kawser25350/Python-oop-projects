@@ -1,25 +1,20 @@
 
 class Food:
-    def __init__(self,name,quantity,price):
+    def __init__(self,name,price,quantity):
          
-        self.__name=name
+        self.name=name
         self.quantity=quantity
-        self.__price=price
+        self.price=price
     
-    @property
-    def name(self):
-        return self.__name
-    @property
-    def quantity(self):
-        return self.quantity
+    
 
 
 class Pizza(Food):
     pass
-class Coke(Food):
+class Drinks(Food):
     pass
 class Burger(Food):
     pass
-class Frenchfry(Food):
+class Coffie(Food):
     pass
 
