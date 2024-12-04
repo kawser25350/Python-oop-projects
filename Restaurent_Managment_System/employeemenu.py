@@ -22,9 +22,14 @@ class Employee_menu:
             if employeId in lst:
                 del lst[employeId]
             else:
-                print(f"{employeId} not foudn ")
+                print(f"{employeId} not found ")
         else:
             print(f"{category} no found!")
 
+    def showall_employee(self):
+        for k,i in self.__employees.items():
+            print(f"       catogery:{k}")
+            for x in i.values():
+                  print(f"ID:{x.id} Name:{x.name} Phone:{x.phone} salary:{x.salary} ")                                         
 
 

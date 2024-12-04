@@ -20,7 +20,7 @@ class Customer(User):
         super().__init__(id, name, phone, address)
     
     def add_order(self,restaurent,id,order):
-        restaurent.add_order(order)
+        restaurent.add_order(id,order)
 
     def pay_bill(self,restaurent,id,bill):
         restaurent.pay_bill(id,bill)
@@ -28,10 +28,33 @@ class Customer(User):
     def show_bill(self,restaurent,id):
         restaurent.show_bill(id)
     
-
-    def check:
-        pass
+class Admin(User):
+    def __init__(self, id, name, phone, address):
+        super().__init__(id, name, phone, address)
+        
     
+    def add_employees(self,restaurent,category,emp):
+        restaurent.add_employee(category,emp)
+
+    def remove_employee(self,restaurent,category,empid):
+        restaurent.remove_employee(category,empid)
+    
+    def pay_bill(self,restaurent,emp):
+        print(f"bill payed for employe{emp.name}")
+
+    def show_employees(self,rs):
+        rs.show_all_employe()
+        
+    
+
+class Employee(User):
+    def __init__(self, id, name, phone, address,salary):
+        super().__init__(id, name, phone, address)
+        self.salary=salary
+
+    
+    
+
     
 
 
