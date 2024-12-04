@@ -29,7 +29,8 @@ class Customer(User):
         restaurent.show_bill(id)
     
 
-
+    def check:
+        pass
     
     
 
