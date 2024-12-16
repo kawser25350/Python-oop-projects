@@ -4,7 +4,7 @@ class Customer(User):
     def __init__(self, user_name, contact, address):
         super().__init__(user_name, contact, address)
         self.cart = []
-        self.bill = 0
+        self.bill = 0      #int
 
     def order_food(self, restaurant, category, foodname):
         if category in restaurant.foodmenu.fooditems:
@@ -43,8 +43,10 @@ class Customer(User):
 
     def pay_bill(self,money):
         self.__calcualte_bill()
-        
-        if self.bill > money:
+        money=int(money)
+        if self.bill == 0:
+            print("Your bill is 0. no need to pay.!")
+        elif self.bill > money:
             self.bill-= money
             print(f"you have to pay {self.bill} more Taka!")
             

@@ -4,7 +4,7 @@ from user import User
 class Admin(User):
     
     
-    def add_empolyee(self,rastaurent,employee):
+    def add_employee(self,rastaurent,employee):
          rastaurent.employeemenu.add_employee(employee)
 
     def view_employee_list(self,restaurent):
