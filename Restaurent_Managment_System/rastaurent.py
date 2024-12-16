@@ -18,4 +18,6 @@ class Rastaurent:
             for x in item:
                 print(x)
                 
-            
+    # more functionality for only reastaurent 
+    # where admin can see revinue and and pay salary of employee 
+    #
