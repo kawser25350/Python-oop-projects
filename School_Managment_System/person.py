@@ -21,7 +21,8 @@ class Student(Person):  #inherit Person
         super().__init__(name)
         self.classroom=classroom   #classroom object
         self.marks={}       #{'sub':23}
-        self.subject_grade={}     # {'sub':'A+'}
+        self.subject_grade=dict()  # Correct initialization
+    #
         self.final_grade=None
         self.__id=None
 
@@ -36,13 +37,15 @@ class Student(Person):  #inherit Person
 
 
     def calculate_final_grade(self):
-
-        for grade in self.subject_grade.values():
+        
+        sum=0
+        for subject, grade in self.subject_grade.items():
 
             point=School.grade_to_value(grade)
             sum+=point 
+           ## print(sum)
         
-        if sum==0:
+        if sum == 0 :
             self.final_grade='F'
         else:
             gpa=sum/len(self.subject_grade)
