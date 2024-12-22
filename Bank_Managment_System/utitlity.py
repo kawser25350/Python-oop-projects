@@ -12,6 +12,6 @@ class Utility:
         Utility.used_ids.add(id)
         return id
 
-    # Removed hash_password method
+  
 
 
