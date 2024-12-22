@@ -14,7 +14,7 @@ class Customer(Person):
         self.balance = 0
         self.loan=Loan()
         self.bankrupt = False
-        # Generate a unique ID for each customer and ensure it is not previously used 
+        # I am Generating a unique ID for each customer and ensure it is not previously used 
         self.customer_id = str(Utility.generate_id())
 
     def deposit(self,amount,bank):
