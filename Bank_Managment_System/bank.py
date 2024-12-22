@@ -32,7 +32,7 @@ class Bank:
     def authenticate(self, userid, password, account_type):
         print(f"Authenticating user ID: {userid}, Account Type: {account_type}")
         if userid in self.authentication:
-            print(f"User ID found. Stored password: {self.authentication[userid]}")
+            print(f"User ID found.")
             if self.authentication[userid] == password:
                 if account_type == 'customer' and userid in self.customers_list:
                     if self.customers_list[userid].bankrupt:

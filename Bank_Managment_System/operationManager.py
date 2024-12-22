@@ -1,9 +1,11 @@
+import os
 from bank import Bank
 from persons import Customer, Admin
 
 class OperationManager:
+    
 
-   #customer part
+    #customer part
     def customer_login_menu(self, bank):
         print('Customer Login Menu')
         print('Enter your customer ID')
@@ -27,7 +29,7 @@ class OperationManager:
         print('Enter your email')
         print('>> ', end='')
         email = input()
-        print('Enter your account type')
+        print('Enter your account typez[savings/current]')
         print('>> ', end='')
         account_type = input()
         print('Enter your password')
@@ -46,7 +48,7 @@ class OperationManager:
             print('4. Balance Transfer')
             print('5. Take Loan')
             print('6. Loan Payment')
-            print('7. Exit')
+            print('7. Logout')
             print('>> ', end='')
             choice = input()
             print()
@@ -80,8 +82,10 @@ class OperationManager:
                 print('>> ', end='')
                 amount = int(input())
                 print(customer.loan_payment(bank, amount))
-            else:
+            elif choice == '7':
                 break
+            else:
+                print('Invalid input, please try again.')
             print()
 
     #admin part
@@ -121,7 +125,11 @@ class OperationManager:
             print('Admin Menu')
             print('1. Show all customers')
             print('2. Delete customer')
-            print('3. Exit')
+            print('3. Check bank balance')
+            print('4. Check given loan of bank')
+            print('5. Turn off customer loan eligibility')
+            print('6. Turn on customer loan eligibility')
+            print('7. Logout')
             print('>> ', end='')
             choice = input()
             print()
@@ -132,8 +140,24 @@ class OperationManager:
                 print('>> ', end='')
                 customer_id = input()
                 print(admin.delete_customer(customer_id, bank))
-            else:
+            elif choice == '3':
+                admin.bank_balance(bank)
+            elif choice == '4':
+                print(f"Total given loan: {bank.given_loan}")
+            elif choice == '5':
+                print('Enter customer ID to turn off loan eligibility')
+                print('>> ', end='')
+                customer_id = input()
+                print(admin.turn_off_loan(customer_id, bank))
+            elif choice == '6':
+                print('Enter customer ID to turn on loan eligibility')
+                print('>> ', end='')
+                customer_id = input()
+                print(admin.turn_on_loan(customer_id, bank))
+            elif choice == '7':
                 break
+            else:
+                print('Invalid input, please try again.')
             print()
 
     # main menu
@@ -157,6 +181,9 @@ class OperationManager:
                 self.admin_login_menu(bank)
             elif choice == '4':
                 self.admin_register_menu(bank)
-            else:
+            elif choice == '5':
                 break
+            else:
+                print('Invalid input, please try again.')
             print()
+

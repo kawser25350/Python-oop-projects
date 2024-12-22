@@ -28,7 +28,7 @@ class Customer(Person):
         else:
             self.balance -= amount
             bank.bank_balance -= amount
-            return f" withdraw succesfull -{self.balance} $"
+            return f" withdraw succesfull {amount}. new balance is :{self.balance} $"
         
     def check_balance(self):
         return f" you balance is - {self.balance} $"    
@@ -41,7 +41,8 @@ class Customer(Person):
                 print('Recipient not found')
             else:
                 bank.customers_list[recipient].deposit(amount, bank)
-                return f"Transfer successful - {self.balance} $"
+                self.balance -= amount
+                return f"Transfer successful - {amount} $"
 
     def take_loan(self,amount,bank):
         if self.loan.eligibility : 
@@ -72,10 +73,12 @@ class Admin(Person):
     def delete_customer(self,customerid,bank):
         if customerid in bank.customers_list:
             bank.customers_list[customerid].bankrupt = True
-            ## authintication theke id delete kori nih karon , bankrupt kora hoise oita show korbe account remove kori nai
-
+            return f"Customer {customerid} has been removed or bankrupt"
         else:
             return 'Customer not found'
+            ## authintication theke id delete kori nih karon , bankrupt kora hoise oita show korbe account remove kori nai
+
+        
         
     def show_all_customers(self,bank):
         bank.show_all_customers();
@@ -85,13 +88,16 @@ class Admin(Person):
     
     def turn_off_loan(self,customerid,bank):
         if customerid in bank.customers_list:
-            bank.customers_list[customerid].loan.eligibility = False;   #using the loan class object to turn off the loan
+            bank.customers_list[customerid].loan.eligibility = False; 
+            return f"succefully loan featuers off for this {customerid} "  #using the loan class object to turn off the loan
         else:
             return 'Customer not found'
     
     def turn_on_loan(self,customerid,bank):
         if customerid in bank.customers_list:
-            bank.customers_list[customerid].loan.eligibility = True;   #using the loan class object to turn on the loan
+            bank.customers_list[customerid].loan.eligibility = True;
+            return f"succefully loan featuers on for this {customerid} "
+  
 
 ## Loan class
 class Loan:
